@@ -9,13 +9,13 @@ export const meta: MetaFunction = () => {
 
 export default function Index() {
   return (
-    <div className="flex h-full items-center justify-center">
-      <div className="flex flex-col items-center gap-16">
-        <header className="flex flex-col items-center gap-9">
-          <h1 className="leading text-2xl font-bold text-gray-800 dark:text-gray-100">
+    <div className="flex h-full items-center justify-center p-4">
+      <div className="flex flex-col items-center gap-8 md:gap-16 max-w-full">
+        <header className="flex flex-col items-center gap-4 md:gap-9">
+          <h1 className="text-xl md:text-2xl font-bold text-gray-800 dark:text-gray-100 text-center">
             Welcome to <span className="sr-only">Remix</span>
           </h1>
-          <div className="h-[144px] w-[434px]">
+          <div className="w-full max-w-[434px]">
             <img
               src="/logo-light.png"
               alt="Remix"
@@ -28,11 +28,11 @@ export default function Index() {
             />
           </div>
         </header>
-        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-6 dark:border-gray-700">
-          <p className="leading-6 text-gray-700 dark:text-gray-200">
+        <nav className="flex flex-col items-center justify-center gap-4 rounded-3xl border border-gray-200 p-4 md:p-6 dark:border-gray-700 w-full max-w-md">
+          <p className="leading-6 text-gray-700 dark:text-gray-200 text-center">
             What&apos;s next?
           </p>
-          <ul>
+          <ul className="w-full">
             {resources.map(({ href, text, icon }) => (
               <li key={href}>
                 <a
@@ -42,7 +42,7 @@ export default function Index() {
                   rel="noreferrer"
                 >
                   {icon}
-                  {text}
+                  <span className="flex-grow">{text}</span>
                 </a>
               </li>
             ))}
